@@ -1,0 +1,23 @@
+{
+  "name": "segment-binary",
+  "version": "1.0.0",
+  "description": "Split and Join binary data into their individual segments",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deflexable/segment-binary.git"
+  },
+  "keywords": [
+    "seperate",
+    "binary"
+  ],
+  "author": "Anthony Onabanjo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deflexable/segment-binary/issues"
+  },
+  "homepage": "https://github.com/deflexable/segment-binary#readme"
+}
