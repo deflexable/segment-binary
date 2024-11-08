@@ -1,3 +1,4 @@
+const { Buffer } = require('buffer');
 
 const segmentBinary = (buf) => {
     if (!Buffer.isBuffer(buf)) throw 'first argument of segmentBinary() must be a buffer';

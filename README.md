@@ -5,13 +5,13 @@ Split and Join binary data into their individual segments.
 ## Installation
 
 ```sh
-npm install segment-binary --save
+npm install segment-binary buffer --save
 ```
 
 or using yarn
 
 ```sh
-yarn add segment-binary
+yarn add segment-binary buffer
 ```
 
 ## Usage
