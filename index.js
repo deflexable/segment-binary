@@ -1,6 +1,8 @@
 const { Buffer } = require('buffer');
 
 const segmentBinary = (buf) => {
+    if ([Uint8Array, ArrayBuffer].some(v => buf instanceof v)) buf = Buffer.from(buf);
+
     if (!Buffer.isBuffer(buf)) throw 'first argument of segmentBinary() must be a buffer';
     const neededBytes = calculateBytesNeeded(buf.length);
     const offsetDataBuffer = Buffer.alloc(neededBytes);
@@ -34,6 +36,8 @@ function calculateBytesNeeded(length) {
  * @type {( buf: Buffer ) => null | [Buffer, Buffer]}
  */
 const desegmentBinary = (buf) => {
+    if ([Uint8Array, ArrayBuffer].some(v => buf instanceof v)) buf = Buffer.from(buf);
+
     if (!Buffer.isBuffer(buf)) throw 'first argument of desegmentBinary() must be a buffer';
     let offset = 0, thisSegment;
     const blocks = [];
@@ -45,7 +49,10 @@ const desegmentBinary = (buf) => {
     }
 
     if (!blocks.length) return null;
-    return { blocks, remainder: buf.subarray(offset, buf.length) };
+    return {
+        blocks: blocks.map(v => v && Buffer.from(v)),
+        remainder: Buffer.from(buf.subarray(offset, buf.length))
+    };
 }
 
 function readVariableLength(buffer, offset) {

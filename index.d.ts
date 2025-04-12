@@ -1,3 +1,4 @@
+import { Buffer } from 'buffer';
 
 /**
  * segement buffer into three blocks with are `size_bytes`, `data_bytes` and `data`

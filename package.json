@@ -1,6 +1,6 @@
 {
   "name": "segment-binary",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Split and Join binary data into their individual segments",
   "main": "index.js",
   "scripts": {
